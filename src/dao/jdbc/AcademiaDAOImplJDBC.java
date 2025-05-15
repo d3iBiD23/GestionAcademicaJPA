@@ -227,7 +227,7 @@ public class AcademiaDAOImplJDBC implements AcademiaDAO {
 		String query = "INSERT INTO matriculas (id_matricula, id_alumno, id_curso, fecha_inicio) VALUES (?, ?, ?, ?)";
 
 		try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
-			stmt.setInt(1, matricula.getIdMatricula());
+			stmt.setLong(1, matricula.getIdMatricula());
 			stmt.setInt(2, matricula.getIdAlumno());
 			stmt.setInt(3, matricula.getIdCurso());
 			stmt.setDate(4, matricula.getFechaInicio());
@@ -307,7 +307,7 @@ public class AcademiaDAOImplJDBC implements AcademiaDAO {
 			stmt.setInt(1, matricula.getIdAlumno());
 			stmt.setInt(2, matricula.getIdCurso());
 			stmt.setDate(3, matricula.getFechaInicio());
-			stmt.setInt(4, matricula.getIdMatricula());
+			stmt.setLong(4, matricula.getIdMatricula());
 			return stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -15,7 +15,7 @@ public class Matricula implements Serializable {
 
 	@Id
 	@Column(name = "id_matricula")
-	private int idMatricula;
+	private long idMatricula;
 	
     @Column(name = "id_alumno")
 	private int idAlumno;
@@ -36,7 +36,7 @@ public class Matricula implements Serializable {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public int getIdMatricula() {
+	public long getIdMatricula() {
 		return idMatricula;
 	}
 
